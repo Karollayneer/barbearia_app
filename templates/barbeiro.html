@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barbeiros</title>
+</head>
+<body>
+    <h1>Gerenciar Barbeiros</h1>
+    <form method="post">
+        Nome: <input type="text" name="nome"><br>
+        Especialidade: <input type="text" name="especialidade"><br>
+        <input type="submit" value="Adicionar Barbeiro">
+    </form>
+    <h2>Lista de Barbeiros</h2>
+    <ul>
+        {% for barbeiro in barbeiros %}
+            <li>ID: {{ barbeiro[0] }}, Nome: {{ barbeiro[1] }}, Especialidade: {{ barbeiro[2] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Voltar ao Início</a>
+</body>
+</html>
